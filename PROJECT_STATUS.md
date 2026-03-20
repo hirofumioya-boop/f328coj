@@ -1,6 +1,6 @@
 # F328 Club of Japan — サイトリデザイン プロジェクト状況
 
-最終更新: 2026-03-20
+最終更新: 2026-03-20（CSS統合完了）
 
 ---
 
@@ -122,18 +122,18 @@ ferrari-redesign/
 
 ---
 
-## ⚠️ CSS修正時の重要ルール
+## CSS管理方針（統合済み）
 
-**index.htmlには独自のインラインCSS（`<style>`タグ内）があるため、style.cssを変更しただけではindex.htmlに反映されない。**
+**index.htmlのインラインCSSはstyle.cssに完全統合済み（2026-03-20）。**
 
-スタイルを変更する際は必ず以下の4ファイルをセットで確認・修正すること：
+- `index.html` → `<style>`タグ完全削除。`style.css`のみ参照。
+- `style.css` → 全ページ共通スタイル＋index.html専用スタイル（コメントで区分）を一元管理
 
-1. `style.css`
-2. `index.html`（インラインCSS）
-3. `touring/touring.html`（インラインCSS）
-4. `gallery/gallery.html`（インラインCSS）
+スタイルを変更する際は **`style.css` 1ファイルのみ** 修正すればよい。
 
-修正後は必ず全ファイルで変更が反映されているか確認してからpushする。
+⚠️ **touring/touring.html と gallery/gallery.html にはまだ独自のインラインCSSが残っている。**
+これらのページ固有のスタイル（card-date等）を修正する場合は各ファイルのインラインCSSも確認すること。
+共通スタイル（nav・footer・page-hero等）はstyle.cssのみでOK。
 
 ---
 
@@ -230,6 +230,16 @@ ferrari-redesign/
 - **原因**: style.cssの `.page-hero-tag` が `font-size: 10px`・font-weight未設定のまま
 - **修正**: `font-size: 12px; font-weight: 700;` に変更
 - **教訓**: トップページの `.section-tag` とサブページの `.page-hero-tag` は同じ見た目にする
+
+### 8. index.htmlのインラインCSSとstyle.cssの二重管理問題
+- **原因**: index.htmlに約1070行のインラインCSSがあり、style.cssと別々に管理していた
+- **修正**: index.htmlの `<style>` タグを完全削除し、全スタイルをstyle.cssに統合
+- **教訓**: インラインCSSはできる限り外部CSSに統合して一元管理する
+
+### 9. サブページのpage-hero-titleがトップページより大きい
+- **原因**: style.cssの `.page-hero-title` が `clamp(32px, 5vw, 64px)` でセクションタイトルより大きかった
+- **修正**: `clamp(24px, 3vw, 38px)` に変更（`.section-title` と同値）
+- **教訓**: CSS統合後はstyle.css1ファイルだけ修正すれば全ページに反映される
 
 ### 6. Pythonスクリプトのバックスラッシュエスケープエラー
 - **原因**: コマンドライン上でPythonをインラインで実行する際のエスケープ問題
