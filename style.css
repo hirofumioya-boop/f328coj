@@ -486,7 +486,7 @@ footer {
 .footer-logo-main { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
 .footer-logo-sub { font-size: 9px; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; }
 
-.footer-desc { font-size: 12px; line-height: 1.8; color: var(--text-muted); max-width: 280px; }
+.footer-desc { font-size: 12px; line-height: 1.8; color: var(--text-muted); max-width: 280px; text-align: center; }
 
 .footer-nav-title {
   font-size: 10px; letter-spacing: 3px;
