@@ -465,7 +465,7 @@ section { padding: 80px 5%; }
 footer {
   background: var(--dark2);
   border-top: 1px solid rgba(255,255,255,0.06);
-  padding: 60px 5% 28px;
+  padding: 20px 5% 20px;
 }
 
 .footer-grid {
