@@ -58,6 +58,7 @@ nav {
 }
 
 .nav-logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+.nav-logo-simple { font-size: 15px; font-weight: 700; color: var(--white); letter-spacing: 2px; text-transform: uppercase; }
 
 .nav-logo-main {
   font-size: 13px; font-weight: 700;
