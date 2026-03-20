@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>F328 Club of Japan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red: #CC0000;
+      --red-dark: #990000;
+      --gold: #C9A84C;
+      --black: #0A0A0A;
+      --dark: #111111;
+      --dark2: #1A1A1A;
+      --gray: #2A2A2A;
+      --light: #F5F5F5;
+      --white: #FFFFFF;
+      --text-muted: #888888;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      height: 70px;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(204,0,0,0.3);
+      transition: background 0.3s;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .nav-logo-emblem {
+      width: 38px;
+      height: 38px;
+      background: var(--red);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--white);
+      font-style: italic;
+    }
+
+    .nav-logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .nav-logo-main {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .nav-logo-sub {
+      font-size: 9px;
+      color: var(--gold);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 1px;
+      background: var(--red);
+      transition: width 0.3s;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--white);
+      transition: 0.3s;
+    }
+
+    /* ── MOBILE MENU ── */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 70px; left: 0; right: 0; bottom: 0;
+      background: rgba(10,10,10,0.97);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 36px;
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .mobile-menu a:hover { color: var(--red); }
+
+    /* ── HERO ── */
+    .hero {
+      height: 100vh;
+      min-height: 600px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(to bottom, rgba(10,10,10,0.15) 0%, rgba(10,10,10,0.25) 100%),
+        url('hero.jpg');
+      background-color: #1a0000;
+      background-size: cover;
+      background-position: center 40%;
+      background-repeat: no-repeat;
+    }
+
+    /* Decorative Ferrari silhouette using CSS */
+    .hero-car {
+      position: absolute;
+      right: -2%;
+      bottom: 0;
+      width: 65%;
+      max-width: 900px;
+      height: 55%;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 85%, rgba(204,0,0,0.12) 0%, transparent 70%);
+      opacity: 0.9;
+    }
+
+    .hero-car::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, transparent 0%, rgba(204,0,0,0.06) 40%, rgba(204,0,0,0.15) 60%, transparent 100%);
+    }
+
+    /* Grid overlay for futuristic look */
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(204,0,0,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(204,0,0,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: linear-gradient(to bottom, transparent 0%, black 30%, black 70%, transparent 100%);
+    }
+
+    /* Red accent line */
+    .hero-line {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 40%;
+      height: 1px;
+      background: linear-gradient(90deg, var(--red) 0%, transparent 100%);
+      opacity: 0.6;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 48px 56px;
+      max-width: 700px;
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+    }
+
+    .hero-eyebrow {
+      font-size: 16px;
+      letter-spacing: 6px;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      opacity: 0.9;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(42px, 8vw, 90px);
+      font-weight: 700;
+      line-height: 1.05;
+      margin-bottom: 8px;
+    }
+
+    .hero-title .accent { color: var(--red); }
+
+    .hero-subtitle {
+      font-size: clamp(16px, 2.5vw, 22px);
+      font-weight: 500;
+      letter-spacing: 8px;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+      margin-bottom: 48px;
+    }
+
+    .hero-badges {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+
+    .badge {
+      font-size: 15px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(201,168,76,0.85);
+      font-weight: 700;
+    }
+
+    .badge + .badge::before {
+      content: '·';
+      margin: 0 14px;
+      color: rgba(255,255,255,0.2);
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      padding: 15px 40px;
+      background: var(--red);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      transition: background 0.3s, transform 0.2s;
+      display: inline-block;
+    }
+
+    .btn-primary:hover { background: var(--red-dark); transform: translateY(-2px); }
+
+    .btn-outline {
+      padding: 15px 40px;
+      border: 1px solid rgba(255,255,255,0.4);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      transition: border-color 0.3s, transform 0.2s;
+      display: inline-block;
+    }
+
+    .btn-outline:hover { border-color: var(--white); transform: translateY(-2px); }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.4);
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.4; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(1.2); }
+    }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      background: var(--dark2);
+      border-top: 1px solid rgba(204,0,0,0.3);
+      border-bottom: 1px solid rgba(204,0,0,0.15);
+      padding: 36px 5%;
+      display: flex;
+      justify-content: center;
+      gap: 0;
+    }
+
+    .stat-item {
+      flex: 1;
+      max-width: 200px;
+      text-align: center;
+      padding: 0 24px;
+      position: relative;
+    }
+
+    .stat-item + .stat-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10%;
+      bottom: 10%;
+      width: 1px;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 52px;
+      font-weight: 700;
+      color: var(--red);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* ── SECTION COMMON ── */
+    section {
+      padding: 100px 5%;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .section-tag {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 5px;
+      color: var(--red);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 4vw, 54px);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .section-divider {
+      width: 60px;
+      height: 2px;
+      background: var(--red);
+      margin: 0 auto;
+    }
+
+    /* ── ABOUT ── */
+    .about {
+      background: var(--dark);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .about-visual {
+      position: relative;
+    }
+
+    .about-img-frame {
+      width: 100%;
+      padding-bottom: 70%;
+      position: relative;
+      overflow: hidden;
+      background-image: url('images/sketch-1743470276449.png');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .about-img-frame::before {
+      content: '';
+    }
+
+    .about-img-frame::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(135deg, rgba(0,0,0,0.25) 0%, transparent 60%);
+    }
+
+    /* Car shape hint */
+    .car-silhouette {
+      position: absolute;
+      inset: 20% 5% 15% 5%;
+      background:
+        linear-gradient(to right, transparent 0%, rgba(204,0,0,0.08) 20%, rgba(204,0,0,0.15) 50%, rgba(204,0,0,0.08) 80%, transparent 100%);
+      border-radius: 80% 80% 60% 60% / 60% 60% 40% 40%;
+      z-index: 1;
+    }
+
+    .about-accent-line {
+      position: absolute;
+      bottom: -16px;
+      left: -16px;
+      width: 120px;
+      height: 120px;
+      border-left: 2px solid var(--red);
+      border-bottom: 2px solid var(--red);
+    }
+
+    .about-accent-line2 {
+      position: absolute;
+      top: -16px;
+      right: -16px;
+      width: 60px;
+      height: 60px;
+      border-right: 1px solid var(--gold);
+      border-top: 1px solid var(--gold);
+    }
+
+    .about-text {}
+
+    .about-eyebrow {
+      font-size: 10px;
+      letter-spacing: 4px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .about-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 24px;
+    }
+
+    .about-body {
+      font-size: 14px;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 32px;
+    }
+
+    .about-features {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .feature-dot {
+      width: 6px; height: 6px;
+      background: var(--red);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── EVENTS ── */
+    .events {
+      background: var(--black);
+    }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .event-card {
+      background: var(--dark2);
+      padding: 40px 36px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .event-card:hover { transform: translateY(-4px); }
+
+    .event-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px; height: 0;
+      background: var(--red);
+      transition: height 0.3s;
+    }
+
+    .event-card:hover::before { height: 100%; }
+
+    .event-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 64px;
+      font-weight: 700;
+      color: rgba(204,0,0,0.08);
+      position: absolute;
+      top: 16px; right: 24px;
+      line-height: 1;
+    }
+
+    .event-season {
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .event-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .event-desc {
+      font-size: 12px;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 24px;
+    }
+
+    .event-meta {
+      display: flex;
+      gap: 20px;
+    }
+
+    .event-meta-item {
+      font-size: 10px;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .meta-icon {
+      width: 14px; height: 14px;
+      border: 1px solid var(--text-muted);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8px;
+    }
+
+    .event-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 24px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--red);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .event-link::after {
+      content: '→';
+      transition: transform 0.2s;
+    }
+
+    .event-card:hover .event-link::after { transform: translateX(4px); }
+
+    /* ── GALLERY ── */
+    .gallery {
+      background: var(--dark);
+      padding-bottom: 80px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(3, 180px);
+      gap: 4px;
+      max-width: 1200px;
+      margin: 0 auto 48px;
+    }
+
+    .gallery-item {
+      background: var(--gray);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+    .gallery-item:nth-child(1) { grid-column: span 5; grid-row: span 2; }
+    .gallery-item:nth-child(2) { grid-column: span 4; grid-row: span 1; }
+    .gallery-item:nth-child(3) { grid-column: span 3; grid-row: span 1; }
+    .gallery-item:nth-child(4) { grid-column: span 4; grid-row: span 1; }
+    .gallery-item:nth-child(5) { grid-column: span 3; grid-row: span 1; }
+    .gallery-item:nth-child(6) { grid-column: span 4; grid-row: span 1; }
+    .gallery-item:nth-child(7) { grid-column: span 4; grid-row: span 1; }
+    .gallery-item:nth-child(8) { grid-column: span 4; grid-row: span 1; }
+
+    /* Gradient fills for demo */
+    .gallery-item:nth-child(1)  { background: linear-gradient(135deg, #1a0000 0%, #3d0000 40%, #1a0000 100%); }
+    .gallery-item:nth-child(2)  { background: linear-gradient(135deg, #0d0d0d 0%, #2a0000 100%); }
+    .gallery-item:nth-child(3)  { background: linear-gradient(135deg, #1a1a0d 0%, #2a2000 100%); }
+    .gallery-item:nth-child(4)  { background: linear-gradient(135deg, #000d1a 0%, #001a2a 100%); }
+    .gallery-item:nth-child(5)  { background: linear-gradient(135deg, #1a0000 0%, #2a0000 100%); }
+    .gallery-item:nth-child(6)  { background: linear-gradient(135deg, #0a0a0a 0%, #1a1a00 100%); }
+    .gallery-item:nth-child(7)  { background: linear-gradient(135deg, #1a000d 0%, #2a0010 100%); }
+    .gallery-item:nth-child(8)  { background: linear-gradient(135deg, #000a1a 0%, #000d20 100%); }
+
+    /* Photo placeholder labels */
+    .gallery-item::before {
+      content: attr(data-label);
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.15);
+      font-weight: 600;
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(204,0,0,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .gallery-overlay-icon {
+      width: 48px; height: 48px;
+      border: 2px solid var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .gallery-cta {
+      text-align: center;
+    }
+
+    /* ── MEMBERSHIP ── */
+    .membership {
+      background: var(--black);
+    }
+
+    .membership-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .membership-info {}
+
+    .membership-info .section-tag { text-align: left; }
+    .membership-info .section-title { text-align: left; }
+    .membership-info .section-divider { margin: 0 0 28px; }
+
+    .membership-text {
+      font-size: 14px;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 32px;
+    }
+
+    .membership-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .membership-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .check {
+      color: var(--red);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .fee-card {
+      background: var(--dark2);
+      border: 1px solid rgba(204,0,0,0.25);
+      padding: 48px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fee-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--red), var(--gold));
+    }
+
+    .fee-label {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+
+    .fee-amount {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .fee-currency {
+      font-size: 24px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .fee-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 72px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .fee-unit {
+      font-size: 16px;
+      color: rgba(255,255,255,0.5);
+      font-weight: 300;
+    }
+
+    .fee-period {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 2px;
+      margin-bottom: 36px;
+    }
+
+    .fee-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.08);
+      margin-bottom: 32px;
+    }
+
+    .fee-includes {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 40px;
+    }
+
+    .fee-include-item {
+      display: flex;
+      gap: 12px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .fee-include-item::before {
+      content: '―';
+      color: var(--red);
+      flex-shrink: 0;
+    }
+
+    /* ── CONTACT ── */
+    .contact {
+      background: var(--dark);
+    }
+
+    .contact-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 16px;
+      margin-top: 48px;
+      text-align: left;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group label {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: var(--dark2);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--white);
+      padding: 14px 18px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--red);
+    }
+
+    .form-group select option { background: var(--dark2); }
+
+    .form-group textarea { resize: vertical; min-height: 120px; }
+
+    .form-submit {
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark2);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 64px 5% 32px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 60px;
+      max-width: 1100px;
+      margin: 0 auto 48px;
+    }
+
+    .footer-brand {}
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .footer-logo-emblem {
+      width: 42px; height: 42px;
+      background: var(--red);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--white);
+      font-style: italic;
+    }
+
+    .footer-logo-text {}
+
+    .footer-logo-main {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .footer-logo-sub {
+      font-size: 9px;
+      color: var(--gold);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .footer-desc {
+      font-size: 12px;
+      line-height: 1.8;
+      color: var(--text-muted);
+      max-width: 300px;
+    }
+
+    .footer-nav-title {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+
+    .footer-nav-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 12px;
+      transition: color 0.2s;
+    }
+
+    .footer-nav-links a:hover { color: var(--white); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer-copy {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .footer-copy span { color: var(--red); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      .stats-bar {
+        flex-wrap: wrap;
+        gap: 32px;
+      }
+
+      .stat-item + .stat-item::before { display: none; }
+      .stat-item { min-width: 120px; }
+
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .about-visual { order: -1; }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+      }
+      .gallery-item { grid-column: span 1 !important; grid-row: span 1 !important; padding-bottom: 70%; }
+      .gallery-item::before { position: absolute; }
+
+      .membership-inner { grid-template-columns: 1fr; gap: 48px; }
+      .membership-info .section-title { font-size: 28px; }
+
+      .form-row { grid-template-columns: 1fr; }
+
+      .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      section { padding: 70px 6%; }
+      .hero-title { font-size: 38px; }
+      .hero-subtitle { letter-spacing: 4px; }
+      .fee-number { font-size: 56px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-emblem">F</div>
+      <div class="nav-logo-text">
+        <span class="nav-logo-main">F328</span>
+        <span class="nav-logo-sub">Club of Japan</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">Our Story</a></li>
+      <li><a href="#events">ツーリングレポート</a></li>
+      <li><a href="#gallery">フォトギャラリー</a></li>
+      <li><a href="#movie">ムービー</a></li>
+      <li><a href="#membership">入会について</a></li>
+      <li><a href="#contact">お問合せ</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" onclick="toggleMenu()">About</a>
+    <a href="#events" onclick="toggleMenu()">ツーリングレポート</a>
+    <a href="#gallery" onclick="toggleMenu()">フォトギャラリー</a>
+    <a href="#movie" onclick="toggleMenu()">ムービー</a>
+    <a href="#membership" onclick="toggleMenu()">入会について</a>
+    <a href="#contact" onclick="toggleMenu()">お問合せ</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-line"></div>
+    <div class="hero-car"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Since 2014</p>
+      <h1 class="hero-title">
+        F<span class="accent">328</span>
+      </h1>
+      <p class="hero-subtitle">Club of Japan</p>
+      <div class="hero-badges">
+        <span class="badge">The Brotherhood of the Horse</span>
+      </div>
+      <div class="hero-cta">
+        <a href="#events" class="btn-primary">ツーリングレポート</a>
+        <a href="#membership" class="btn-outline">入会について</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="about-img-frame">
+        </div>
+        <div class="about-accent-line"></div>
+        <div class="about-accent-line2"></div>
+      </div>
+      <div class="about-text">
+        <p class="about-eyebrow">Our Story</p>
+        <h2 class="about-title">ジェントルマンシップを<br>重んじるクラブ</h2>
+        <p class="about-body">
+          F328 Club of Japan（F328COJ）は、2014年3月にフェラーリ328を愛する4名のメンバーによって設立されました。<br><br>
+          私たちはフェラーリ328という名車を通じて、同じ情熱を持つメンバー同士の絆を深めることを目的としています。ジェントルマンシップを重んじる当クラブでは、オーナーに限らず、フェラーリ328やクルマへの情熱を持つすべての方を歓迎しています。
+        </p>
+        <div class="about-features">
+          <div class="feature-item">
+            <div class="feature-dot"></div>
+            <span>定期的なツーリングイベントの企画・運営</span>
+          </div>
+          <div class="feature-item">
+            <div class="feature-dot"></div>
+            <span>フェラーリ328のレストア・メンテナンス情報共有</span>
+          </div>
+          <div class="feature-item">
+            <div class="feature-dot"></div>
+            <span>フェラーリ愛好家同士のコミュニティ形成</span>
+          </div>
+          <div class="feature-item">
+            <div class="feature-dot"></div>
+            <span>オーナーに限らず、情熱あるすべての方が入会可能</span>
+          </div>
+        </div>
+        <a href="#membership" class="btn-primary">入会について</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTS -->
+  <section class="events" id="events">
+    <div class="section-header">
+      <p class="section-tag">Touring Reports</p>
+      <h2 class="section-title">ツーリングレポート</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="events-grid">
+      <div class="event-card">
+        <div class="event-number">01</div>
+        <p class="event-season">January 2026</p>
+        <h3 class="event-title">外房ツーリング</h3>
+        <p class="event-desc">千葉県白子町「まきのてい」でのランチツーリング。328が8台、348スパイダー、355、F8他、計16台が集結。</p>
+        <div class="event-meta">
+          <span class="event-meta-item"><span class="meta-icon">📍</span>千葉県白子町</span>
+          <span class="event-meta-item"><span class="meta-icon">🏎</span>16台参加</span>
+        </div>
+        <a href="touring/report/2026-sotobou.html" class="event-link">レポートを読む</a>
+      </div>
+      <div class="event-card">
+        <div class="event-number">02</div>
+        <p class="event-season">December 2025</p>
+        <h3 class="event-title">年次総会兼<br>三浦ツーリング</h3>
+        <p class="event-desc">神奈川県三浦市「リバイバルカフェ」にて年次総会を兼ねたツーリング。19名のメンバーが参加しました。</p>
+        <div class="event-meta">
+          <span class="event-meta-item"><span class="meta-icon">📍</span>神奈川県三浦市</span>
+          <span class="event-meta-item"><span class="meta-icon">🏎</span>19名参加</span>
+        </div>
+        <a href="touring/report/2025-miura.html" class="event-link">レポートを読む</a>
+      </div>
+      <div class="event-card">
+        <div class="event-number">03</div>
+        <p class="event-season">October 2025</p>
+        <h3 class="event-title">群馬ツーリング</h3>
+        <p class="event-desc">邑楽郡大泉町を舞台にした群馬ツーリング。Auto Romanを訪問し、秋の関東平野をクルーズしました。</p>
+        <div class="event-meta">
+          <span class="event-meta-item"><span class="meta-icon">📍</span>群馬県大泉町</span>
+        </div>
+        <a href="touring/report/2025-gunma.html" class="event-link">レポートを読む</a>
+      </div>
+      <div class="event-card">
+        <div class="event-number">04</div>
+        <p class="event-season">September 2025</p>
+        <h3 class="event-title">舞浜ツーリング</h3>
+        <p class="event-desc">千葉県舞浜・ホテルオークラベイ東京を目的地に、湾岸エリアをドライブする夏の締めくくりツーリング。</p>
+        <div class="event-meta">
+          <span class="event-meta-item"><span class="meta-icon">📍</span>千葉県舞浜</span>
+        </div>
+        <a href="touring/report/2025-maihama.html" class="event-link">レポートを読む</a>
+      </div>
+      <div class="event-card">
+        <div class="event-number">05</div>
+        <p class="event-season">May 2025</p>
+        <h3 class="event-title">軽井沢ツーリング</h3>
+        <p class="event-desc">毎年恒例の軽井沢ツーリング。新緑の高原を抜ける爽快なドライブを楽しみました。</p>
+        <div class="event-meta">
+          <span class="event-meta-item"><span class="meta-icon">📍</span>長野県軽井沢</span>
+        </div>
+        <a href="touring/report/2025-karuizawa.html" class="event-link">レポートを読む</a>
+      </div>
+      <div class="event-card">
+        <div class="event-number">06</div>
+        <p class="event-season">March 2025</p>
+        <h3 class="event-title">328DAY 特別企画</h3>
+        <p class="event-desc">3月28日「328DAY」を記念した特別ツーリング。山梨県フルーツパーク富士屋ホテルに集結しました。</p>
+        <div class="event-meta">
+          <span class="event-meta-item"><span class="meta-icon">📍</span>山梨県</span>
+        </div>
+        <a href="touring/report/2025-328day.html" class="event-link">レポートを読む</a>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:48px;">
+      <a href="touring/touring.html" class="btn-outline">すべてのレポートを見る（2014年〜）</a>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="section-header">
+      <p class="section-tag">Gallery</p>
+      <h2 class="section-title">フォトギャラリー</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item" data-label="Featured" style="background-image:url('images/01_10.jpg'); background-size:cover; background-position:center;">
+        <div class="gallery-overlay"><div class="gallery-overlay-icon">+</div></div>
+      </div>
+      <div class="gallery-item" data-label="Touring" style="background-image:url('images/02_10.jpg'); background-size:cover; background-position:center;">
+        <div class="gallery-overlay"><div class="gallery-overlay-icon">+</div></div>
+      </div>
+      <div class="gallery-item" data-label="Detail" style="background-image:url('images/03_10.jpg'); background-size:cover; background-position:center;">
+        <div class="gallery-overlay"><div class="gallery-overlay-icon">+</div></div>
+      </div>
+      <div class="gallery-item" data-label="Event" style="background-image:url('images/04_10.jpg'); background-size:cover; background-position:center;">
+        <div class="gallery-overlay"><div class="gallery-overlay-icon">+</div></div>
+      </div>
+      <div class="gallery-item" data-label="Scenery" style="background-image:url('images/05_5.jpg'); background-size:cover; background-position:center;">
+        <div class="gallery-overlay"><div class="gallery-overlay-icon">+</div></div>
+      </div>
+      <div class="gallery-item" data-label="Interior" style="background-image:url('images/06_10.jpg'); background-size:cover; background-position:center;">
+        <div class="gallery-overlay"><div class="gallery-overlay-icon">+</div></div>
+      </div>
+      <div class="gallery-item" data-label="Group" style="background-image:url('images/07_8.jpg'); background-size:cover; background-position:center;">
+        <div class="gallery-overlay"><div class="gallery-overlay-icon">+</div></div>
+      </div>
+      <div class="gallery-item" data-label="Classic" style="background-image:url('images/08_8.jpg'); background-size:cover; background-position:center;">
+        <div class="gallery-overlay"><div class="gallery-overlay-icon">+</div></div>
+      </div>
+    </div>
+    <div class="gallery-cta">
+      <a href="gallery/gallery.html" class="btn-outline">すべてのギャラリーを見る</a>
+    </div>
+  </section>
+
+  <!-- MOVIE -->
+  <section class="events" id="movie" style="background: var(--black);">
+    <div class="section-header">
+      <p class="section-tag">Movies</p>
+      <h2 class="section-title">ムービー</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:16px; max-width:1200px; margin:0 auto;">
+      <div style="aspect-ratio:16/9; background:#111;">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/9t3KcLmNBNs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:block;"></iframe>
+      </div>
+      <div style="aspect-ratio:16/9; background:#111;">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/x83AU6cH0Wo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:block;"></iframe>
+      </div>
+      <div style="aspect-ratio:16/9; background:#111;">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dByot8TBpzM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:block;"></iframe>
+      </div>
+      <div style="aspect-ratio:16/9; background:#111;">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/3zk2Oh0OTn0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:block;"></iframe>
+      </div>
+      <div style="aspect-ratio:16/9; background:#111;">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VZkeFGl7Wyc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:block;"></iframe>
+      </div>
+      <div style="aspect-ratio:16/9; background:#111;">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/KAr4-XDF7to" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:block;"></iframe>
+      </div>
+      <div style="aspect-ratio:16/9; background:#111;">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/wZ9qc3Q2h7A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:block;"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEMBERSHIP -->
+  <section class="membership" id="membership">
+    <div class="membership-inner">
+      <div class="membership-info">
+        <p class="section-tag">Membership</p>
+        <h2 class="section-title">入会について</h2>
+        <div class="section-divider"></div>
+        <p class="membership-text">
+          F328 Club of Japanは、クルマへの情熱と紳士的な精神を共有するすべての方を歓迎しています。オーナーに限らず、フェラーリ328という名車に魅せられた方であればどなたでもご入会いただけます。<br><br>入会をご希望の方は、お問合せフォームよりご連絡ください。
+        </p>
+        <ul class="membership-list">
+          <li><span class="check">✓</span><span>20歳以上の健全な男女であること</span></li>
+          <li><span class="check">✓</span><span>既存会員2名からの推薦があること</span></li>
+          <li><span class="check">✓</span><span>理事会の承認を受けること</span></li>
+          <li><span class="check">✓</span><span>このクラブをこよなく愛する方（車の所有不問）</span></li>
+          <li><span class="check">✓</span><span>ジェントルマンシップを大切にされる方</span></li>
+        </ul>
+        <p style="font-size:12px; color:rgba(255,255,255,0.45); line-height:1.7; margin-bottom:32px;">
+          ※ 会員による営利目的の活動、および会員間の車売買は禁止されています。
+        </p>
+        
+      </div>
+      <div>
+        <div class="fee-card">
+          <p class="fee-label">Membership Fees</p>
+          <div style="margin-bottom:24px;">
+            <p style="font-size:10px; letter-spacing:2px; color:var(--text-muted); margin-bottom:6px;">入会金</p>
+            <div class="fee-amount" style="margin-bottom:4px;">
+              <span class="fee-currency">¥</span>
+              <span class="fee-number" style="font-size:52px;">5,000</span>
+            </div>
+            <p style="font-size:10px; color:var(--text-muted); letter-spacing:1px;">初回のみ（再入会時も同額）</p>
+          </div>
+          <div style="margin-bottom:24px;">
+            <p style="font-size:10px; letter-spacing:2px; color:var(--text-muted); margin-bottom:6px;">年会費</p>
+            <div class="fee-amount" style="margin-bottom:4px;">
+              <span class="fee-currency">¥</span>
+              <span class="fee-number" style="font-size:52px;">6,000</span>
+            </div>
+            <p style="font-size:10px; color:var(--text-muted); letter-spacing:1px;">毎年1月〜12月（7月以降入会は¥3,000）</p>
+          </div>
+          <div class="fee-divider"></div>
+          <div class="fee-includes">
+            <div class="fee-include-item">定期ツーリングイベントへの参加資格</div>
+            <div class="fee-include-item">ギャラリー・ムービーコンテンツへのアクセス</div>
+            <div class="fee-include-item">レストア・メンテナンス情報の共有</div>
+            <div class="fee-include-item">会員同士のコミュニティへの参加</div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <div class="section-header">
+        <p class="section-tag">Contact</p>
+        <h2 class="section-title">お問い合わせ</h2>
+        <div class="section-divider"></div>
+      </div>
+      <form class="contact-form" action="#" method="post" onsubmit="return false;">
+        <div class="form-row">
+          <div class="form-group">
+            <label>お名前 *</label>
+            <input type="text" name="name" placeholder="山田 太郎" required />
+          </div>
+          <div class="form-group">
+            <label>メールアドレス *</label>
+            <input type="email" name="email" placeholder="your@email.com" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>コメント・お問い合わせ内容 *</label>
+          <textarea name="comment" placeholder="入会について、イベントについてなど、お気軽にお問い合わせください。" required></textarea>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn-primary" style="border:none; cursor:pointer; font-family:'Montserrat',sans-serif;">
+            送信する
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-emblem">F</div>
+          <div class="footer-logo-text">
+            <div class="footer-logo-main">F328</div>
+            <div class="footer-logo-sub">Club of Japan</div>
+          </div>
+        </div>
+        <p class="footer-desc">
+          ジェントルマンシップを重んじ、フェラーリ328への情熱を共有するクラブ。2014年設立。
+        </p>
+      </div>
+      <div>
+        
+        <ul class="footer-nav-links">
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="#events">ツーリングレポート</a></li>
+          <li><a href="#gallery">フォトギャラリー</a></li>
+          <li><a href="#membership">入会について</a></li>
+          <li><a href="#contact">お問合せ</a></li>
+        </ul>
+      </div>
+      <div>
+        
+        <ul class="footer-nav-links">
+          <li><a href="#">ムービー</a></li>
+          <li><a href="#">レストア情報</a></li>
+          <li><a href="#">イベントスケジュール</a></li>
+          <li><a href="#">会員専用ページ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2024 F328 Club of Japan. <span>F328COJ</span>. All Rights Reserved.</p>
+      <p class="footer-copy" style="font-size:10px; opacity:0.5;">Ferrari and F328 are registered trademarks of Ferrari N.V. This site is not affiliated with Ferrari N.V.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('open');
+    }
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        nav.style.background = 'rgba(10,10,10,0.98)';
+      } else {
+        nav.style.background = 'rgba(10,10,10,0.92)';
+      }
+    });
+  </script>
+</body>
+</html>

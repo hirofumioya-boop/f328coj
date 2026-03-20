@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ツーリングレポート | F328 Club of Japan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    /* ── TOURING PAGE EXTRAS ── */
+    .touring-main {
+      background: var(--dark);
+      padding: 80px 5%;
+    }
+
+    .year-group:nth-child(odd) {
+      /* subtle alternating via card-grid background */
+    }
+
+    .year-group .card-grid {
+      background: transparent;
+    }
+
+    /* Alternating section backgrounds */
+    .year-section:nth-child(even) {
+      background: var(--black);
+    }
+
+    .year-section:nth-child(odd) {
+      background: var(--dark);
+    }
+
+    .year-section {
+      padding: 60px 5%;
+    }
+
+    .year-section .year-group {
+      margin-bottom: 0;
+    }
+
+    .card-date {
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .card-location {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .card-location::before {
+      content: '◎';
+      font-size: 9px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav>
+    <a href="../index.html" class="nav-logo">
+      <div class="nav-logo-emblem">F</div>
+      <div class="nav-logo-text">
+        <span class="nav-logo-main">F328</span>
+        <span class="nav-logo-sub">Club of Japan</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">ホーム</a></li>
+      <li><a href="touring.html" class="active">ツーリングレポート</a></li>
+      <li><a href="../gallery/gallery.html">フォトギャラリー</a></li>
+      <li><a href="../movie/movie.html">ムービー</a></li>
+      <li><a href="../restore/restore.html">レストア</a></li>
+      <li><a href="../index.html#membership">入会について</a></li>
+      <li><a href="../index.html#contact">お問合せ</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- ── MOBILE MENU ── -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../index.html" onclick="toggleMenu()">ホーム</a>
+    <a href="touring.html" onclick="toggleMenu()">ツーリングレポート</a>
+    <a href="../gallery/gallery.html" onclick="toggleMenu()">フォトギャラリー</a>
+    <a href="../movie/movie.html" onclick="toggleMenu()">ムービー</a>
+    <a href="../restore/restore.html" onclick="toggleMenu()">レストア</a>
+    <a href="../index.html#membership" onclick="toggleMenu()">入会について</a>
+    <a href="../index.html#contact" onclick="toggleMenu()">お問合せ</a>
+  </div>
+
+  <!-- ── PAGE HERO ── -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <p class="page-hero-tag">Touring Reports</p>
+      <h1 class="page-hero-title">ツーリングレポート</h1>
+      <p class="page-hero-sub">2014年の設立以来、全国各地で開催してきたツーリングの記録</p>
+      <div class="page-hero-line"></div>
+    </div>
+  </section>
+
+  <!-- ── MAIN CONTENT ── -->
+  <main>
+
+    <!-- 2026 -->
+    <div class="year-section">
+      <div class="year-group">
+        <div class="year-label">2026</div>
+        <div class="card-grid">
+
+          <div class="card">
+            <div class="card-number">01</div>
+            <p class="card-date">2026年1月18日</p>
+            <p class="card-location">千葉県白子町</p>
+            <h3 class="card-title">外房ツーリング</h3>
+            <p class="card-desc">「まきのてい」でのランチツーリング。328×8台含む計16台が集結。冬の外房の海岸線を快走し、旬の魚介を堪能した新年最初のイベント。</p>
+            <a class="card-link" href="report/2026-sotobou.html" target="_blank">レポートを読む</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 2025 -->
+    <div class="year-section">
+      <div class="year-group">
+        <div class="year-label">2025</div>
+        <div class="card-grid">
+
+          <div class="card">
+            <div class="card-number">08</div>
+            <p class="card-date">2025年12月14日</p>
+            <p class="card-location">神奈川県三浦市</p>
+            <h3 class="card-title">年次総会兼三浦ツーリング</h3>
+            <p class="card-desc">「リバイバルカフェ」で年次総会を兼ねて開催。19名参加。三浦半島の冬景色を楽しみながら1年の活動を振り返り、次年度の計画を話し合った。</p>
+            <a class="card-link" href="report/2025-miura.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">07</div>
+            <p class="card-date">2025年10月26日</p>
+            <p class="card-location">群馬県大泉町</p>
+            <h3 class="card-title">群馬ツーリング</h3>
+            <p class="card-desc">Auto Roman訪問。秋の関東平野をクルーズ。色づき始めた田園風景の中を走り抜け、貴重なフェラーリパーツを展示するAuto Romanを堪能した。</p>
+            <a class="card-link" href="report/2025-gunma.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">06</div>
+            <p class="card-date">2025年9月7日</p>
+            <p class="card-location">千葉県舞浜</p>
+            <h3 class="card-title">舞浜ツーリング</h3>
+            <p class="card-desc">ホテルオークラベイ東京を目的地に湾岸エリアを走行。東京湾岸のダイナミックな景観を楽しみながら、夏の終わりを仲間たちと過ごした。</p>
+            <a class="card-link" href="report/2025-maihama.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">05</div>
+            <p class="card-date">2025年5月25日</p>
+            <p class="card-location">長野県軽井沢</p>
+            <h3 class="card-title">軽井沢ツーリング</h3>
+            <p class="card-desc">新緑の高原ドライブ。爽やかな初夏の空気の中、浅間山を望む高原のワインディングロードをF328が連なって走行した。</p>
+            <a class="card-link" href="report/2025-karuizawa.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">04</div>
+            <p class="card-date">2025年4月20日</p>
+            <p class="card-location">静岡県御殿場</p>
+            <h3 class="card-title">御殿場ツーリング</h3>
+            <p class="card-desc">HOTEL CLADを目的地に。富士山を望む御殿場高原を目指し、春の静岡を走り抜けたツーリング。桜と富士のコントラストが印象的だった。</p>
+            <a class="card-link" href="report/2025-gotemba.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">03</div>
+            <p class="card-date">2025年3月30日</p>
+            <p class="card-location">山梨県</p>
+            <h3 class="card-title">328DAY特別企画</h3>
+            <p class="card-desc">フルーツパーク富士屋ホテルに集結。3月28日の「328の日」にちなんだ特別企画。甲府盆地を囲む山々に残雪が輝く中、多くの328が集まった。</p>
+            <a class="card-link" href="report/2025-328day.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">01</div>
+            <p class="card-date">2025年1月19日</p>
+            <p class="card-location">神奈川県小田原市</p>
+            <h3 class="card-title">小田原ツーリング</h3>
+            <p class="card-desc">新年最初のツーリング。相模湾を望む小田原へ、冬晴れの海岸線ドライブを楽しんだ。</p>
+            <a class="card-link" href="report/2025-odawara.html" target="_blank">レポートを読む</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 2024 -->
+    <div class="year-section">
+      <div class="year-group">
+        <div class="year-label">2024</div>
+        <div class="card-grid">
+
+          <div class="card">
+            <div class="card-number">07</div>
+            <p class="card-date">2024年12月15日</p>
+            <p class="card-location">神奈川県三浦市</p>
+            <h3 class="card-title">年次総会兼ミニツーリング</h3>
+            <p class="card-desc">三浦半島にて年次総会を兼ねたミニツーリングを開催。1年の活動をメンバーとともに振り返った。</p>
+            <a class="card-link" href="archive/2024.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">06</div>
+            <p class="card-date">2024年10月27日</p>
+            <p class="card-location">山梨県山中湖</p>
+            <h3 class="card-title">山中湖ツーリング</h3>
+            <p class="card-desc">秋の富士五湖エリアへ。山中湖畔から望む富士山と紅葉の絶景を楽しんだ。</p>
+            <a class="card-link" href="archive/2024.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">05</div>
+            <p class="card-date">2024年9月8日</p>
+            <p class="card-location">千葉県舞浜</p>
+            <h3 class="card-title">舞浜ツーリング</h3>
+            <p class="card-desc">湾岸エリアを走り舞浜へ。東京湾を望む景色の中、夏の終わりのドライブを満喫した。</p>
+            <a class="card-link" href="archive/2024.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">04</div>
+            <p class="card-date">2024年5月19日</p>
+            <p class="card-location">長野県軽井沢</p>
+            <h3 class="card-title">軽井沢ツーリング</h3>
+            <p class="card-desc">緑薫る軽井沢高原へ。清涼な空気の中、ワインディングロードを328で快走した。</p>
+            <a class="card-link" href="archive/2024.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">03</div>
+            <p class="card-date">2024年4月21日</p>
+            <p class="card-location">神奈川県横須賀市</p>
+            <h3 class="card-title">横須賀ツーリング</h3>
+            <p class="card-desc">春の三浦半島を抜け横須賀へ。海軍の街の歴史と絶景を楽しんだ春のツーリング。</p>
+            <a class="card-link" href="archive/2024.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">02</div>
+            <p class="card-date">2024年3月24日</p>
+            <p class="card-location">328DAY</p>
+            <h3 class="card-title">328DAY / 10周年記念ツーリング</h3>
+            <p class="card-desc">クラブ設立10周年を記念した特別な328DAY。歴代の思い出とともに節目を祝した記念イベント。</p>
+            <a class="card-link" href="archive/2024.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">01</div>
+            <p class="card-date">2024年1月28日</p>
+            <p class="card-location">千葉県九十九里</p>
+            <h3 class="card-title">九十九里ツーリング</h3>
+            <p class="card-desc">九十九里浜の冬の海岸線をドライブ。太平洋を望む雄大な景色の中を走る新年の幕開けツーリング。</p>
+            <a class="card-link" href="archive/2024.html" target="_blank">レポートを読む</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 2023 -->
+    <div class="year-section">
+      <div class="year-group">
+        <div class="year-label">2023</div>
+        <div class="card-grid">
+
+          <div class="card">
+            <div class="card-number">07</div>
+            <p class="card-date">2023年11月19日</p>
+            <p class="card-location">富士スピードウェイホテル</p>
+            <h3 class="card-title">ABARTHコラボツーリング</h3>
+            <p class="card-desc">アバルトクラブとのコラボレーションイベント。イタリア車同士の交流で親睦を深めた。</p>
+            <a class="card-link" href="archive/2023.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">06</div>
+            <p class="card-date">2023年10月22日</p>
+            <p class="card-location">千葉県浦安市</p>
+            <h3 class="card-title">湾岸ツーリング</h3>
+            <p class="card-desc">東京湾岸エリアを走る秋のツーリング。工場夜景と湾岸の雄大なスケールを楽しんだ。</p>
+            <a class="card-link" href="archive/2023.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">05</div>
+            <p class="card-date">2023年9月24日</p>
+            <p class="card-location">山梨県フルーツパーク</p>
+            <h3 class="card-title">山梨ツーリング</h3>
+            <p class="card-desc">山梨フルーツパークへ。果物の実る甲府盆地を走り抜け、旬のフルーツを堪能した。</p>
+            <a class="card-link" href="archive/2023.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">04</div>
+            <p class="card-date">2023年5月21日</p>
+            <p class="card-location">長野県軽井沢</p>
+            <h3 class="card-title">軽井沢ツーリング</h3>
+            <p class="card-desc">初夏の軽井沢高原を走る恒例ツーリング。新緑の爽やかな空気の中を328で快走した。</p>
+            <a class="card-link" href="archive/2023.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">03</div>
+            <p class="card-date">2023年4月23日</p>
+            <p class="card-location">横須賀市</p>
+            <h3 class="card-title">三浦半島ツーリング</h3>
+            <p class="card-desc">春爛漫の三浦半島を縦断。海岸線の絶景と新鮮な海産物を楽しんだ春のイベント。</p>
+            <a class="card-link" href="archive/2023.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">02</div>
+            <p class="card-date">2023年3月26日</p>
+            <p class="card-location">仙石原箱根リトリート</p>
+            <h3 class="card-title">328DAYツーリング</h3>
+            <p class="card-desc">箱根仙石原リトリートを目的地に328DAYを祝うツーリング。山岳路でエンジンを唸らせた。</p>
+            <a class="card-link" href="archive/2023.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">01</div>
+            <p class="card-date">2023年1月22日</p>
+            <p class="card-location">千葉県九十九里</p>
+            <h3 class="card-title">千葉ツーリング</h3>
+            <p class="card-desc">冬の九十九里浜へ。澄んだ冬空と太平洋の大海原を楽しむ新年初めてのドライブ。</p>
+            <a class="card-link" href="archive/2023.html" target="_blank">レポートを読む</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 2022 -->
+    <div class="year-section">
+      <div class="year-group">
+        <div class="year-label">2022</div>
+        <div class="card-grid">
+
+          <div class="card">
+            <div class="card-number">06</div>
+            <p class="card-date">2022年11月6日</p>
+            <p class="card-location">群馬県前橋市</p>
+            <h3 class="card-title">前橋ツーリング</h3>
+            <p class="card-desc">秋の上州路を走る群馬ツーリング。赤城山を望む前橋へ、色づく紅葉の中を走行した。</p>
+            <a class="card-link" href="archive/2022.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">05</div>
+            <p class="card-date">2022年10月9日</p>
+            <p class="card-location">富士スピードウェイ</p>
+            <h3 class="card-title">大乗フェラーリミーティング参加</h3>
+            <p class="card-desc">富士スピードウェイで開催された大乗フェラーリミーティングに参加。数多くのフェラーリが一堂に集う壮観な光景を楽しんだ。</p>
+            <a class="card-link" href="archive/2022.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">04</div>
+            <p class="card-date">2022年9月11日</p>
+            <p class="card-location">仙石原</p>
+            <h3 class="card-title">箱根ツーリング</h3>
+            <p class="card-desc">仙石原のススキ野原を目指した秋の箱根ツーリング。山岳ルートを縦横に走り抜けた。</p>
+            <a class="card-link" href="archive/2022.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">03</div>
+            <p class="card-date">2022年5月22日</p>
+            <p class="card-location">長野県軽井沢</p>
+            <h3 class="card-title">軽井沢ツーリング</h3>
+            <p class="card-desc">恒例となった初夏の軽井沢ツーリング。爽やかな高原の空気と緑の中を駆け抜けた。</p>
+            <a class="card-link" href="archive/2022.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">02</div>
+            <p class="card-date">2022年4月17日</p>
+            <p class="card-location">三浦半島</p>
+            <h3 class="card-title">神奈川ツーリング</h3>
+            <p class="card-desc">春の三浦半島をドライブ。海岸線の桜と相模湾の眺めを楽しみながら走った春のイベント。</p>
+            <a class="card-link" href="archive/2022.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">01</div>
+            <p class="card-date">2022年3月27日</p>
+            <p class="card-location">328DAY</p>
+            <h3 class="card-title">328DAYツーリング</h3>
+            <p class="card-desc">3月28日にちなんだ年恒例の328DAYツーリング。春の訪れとともに愛車を走らせた。</p>
+            <a class="card-link" href="archive/2022.html" target="_blank">レポートを読む</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 2021 -->
+    <div class="year-section">
+      <div class="year-group">
+        <div class="year-label">2021</div>
+        <div class="card-grid">
+
+          <div class="card">
+            <div class="card-number">03</div>
+            <p class="card-date">2021年11月28日</p>
+            <p class="card-location">杉戸町</p>
+            <h3 class="card-title">埼玉ツーリング</h3>
+            <p class="card-desc">晩秋の埼玉・杉戸町へ。関東平野の広大な風景の中をドライブした。</p>
+            <a class="card-link" href="archive/2021.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">02</div>
+            <p class="card-date">2021年10月24日</p>
+            <p class="card-location">箱根</p>
+            <h3 class="card-title">箱根ツーリング</h3>
+            <p class="card-desc">秋色に染まる箱根を走るツーリング。ワインディングロードで328の走りを堪能した。</p>
+            <a class="card-link" href="archive/2021.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">01</div>
+            <p class="card-date">2021年3月28日</p>
+            <p class="card-location">木更津</p>
+            <h3 class="card-title">328DAYツーリング</h3>
+            <p class="card-desc">木更津を目的地にした328DAYツーリング。アクアラインを走り春の房総を満喫した。</p>
+            <a class="card-link" href="archive/2021.html" target="_blank">レポートを読む</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 2020 -->
+    <div class="year-section">
+      <div class="year-group">
+        <div class="year-label">2020</div>
+        <div class="card-grid">
+
+          <div class="card">
+            <div class="card-number">04</div>
+            <p class="card-date">2020年11月8日</p>
+            <p class="card-location">大磯</p>
+            <h3 class="card-title">大磯ツーリング / 大乗フェラーリミーティング2020</h3>
+            <p class="card-desc">大乗フェラーリミーティング2020に参加。大磯に各地のフェラーリが集結した。</p>
+            <a class="card-link" href="archive/2020.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">03</div>
+            <p class="card-date">2020年10月18日</p>
+            <p class="card-location">お台場</p>
+            <h3 class="card-title">お台場ツーリング</h3>
+            <p class="card-desc">秋のお台場をドライブ。レインボーブリッジを望む湾岸エリアを走行した。</p>
+            <a class="card-link" href="archive/2020.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">02</div>
+            <p class="card-date">2020年9月27日</p>
+            <p class="card-location">山梨県山中湖</p>
+            <h3 class="card-title">山中湖ツーリング</h3>
+            <p class="card-desc">秋の富士山麓、山中湖を目指したツーリング。湖畔から望む富士山を楽しんだ。</p>
+            <a class="card-link" href="archive/2020.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">01</div>
+            <p class="card-date">2020年1月19日</p>
+            <p class="card-location">神奈川県小田原市</p>
+            <h3 class="card-title">小田原ツーリング</h3>
+            <p class="card-desc">新年最初のツーリングとして小田原を訪問。相模湾と小田原城を楽しんだ。</p>
+            <a class="card-link" href="archive/2020.html" target="_blank">レポートを読む</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 2019 -->
+    <div class="year-section">
+      <div class="year-group">
+        <div class="year-label">2019</div>
+        <div class="card-grid">
+
+          <div class="card">
+            <div class="card-number">08</div>
+            <p class="card-date">2019年12月1日</p>
+            <p class="card-location">年末イベント</p>
+            <h3 class="card-title">総会・クリスマスパーティー</h3>
+            <p class="card-desc">年末の恒例行事、総会とクリスマスパーティーを開催。1年の活動を締めくくった。</p>
+            <a class="card-link" href="archive/2019.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">07</div>
+            <p class="card-date">2019年11月17日</p>
+            <p class="card-location">箱根</p>
+            <h3 class="card-title">箱根ツーリング</h3>
+            <p class="card-desc">ラリック美術館を目的地にした秋の箱根ツーリング。アールヌーヴォーの世界と紅葉を満喫した。</p>
+            <a class="card-link" href="archive/2019.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">06</div>
+            <p class="card-date">2019年10月27日</p>
+            <p class="card-location">群馬県</p>
+            <h3 class="card-title">群馬ツーリング</h3>
+            <p class="card-desc">Auto Roman訪問ツーリング。秋の群馬を走り、貴重なフェラーリパーツを堪能した。</p>
+            <a class="card-link" href="archive/2019.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">05</div>
+            <p class="card-date">2019年9月29日</p>
+            <p class="card-location">山梨県</p>
+            <h3 class="card-title">山梨ツーリング</h3>
+            <p class="card-desc">フルーツパーク富士屋ホテルを目的地に。甲府盆地の恵みと富士山の眺望を楽しんだ。</p>
+            <a class="card-link" href="archive/2019.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">04</div>
+            <p class="card-date">2019年5月19日</p>
+            <p class="card-location">長野県軽井沢</p>
+            <h3 class="card-title">軽井沢一泊ツーリング</h3>
+            <p class="card-desc">初夏の軽井沢で一泊するロングツーリング。高原のワインディングと宿での交流を堪能した。</p>
+            <a class="card-link" href="archive/2019.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">03</div>
+            <p class="card-date">2019年4月21日</p>
+            <p class="card-location">茨城県</p>
+            <h3 class="card-title">サーキットの狼ミュージアムツーリング</h3>
+            <p class="card-desc">茨城県のサーキットの狼ミュージアムへ。往年のスーパーカーを展示する聖地を訪問した。</p>
+            <a class="card-link" href="archive/2019.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">02</div>
+            <p class="card-date">2019年3月24日</p>
+            <p class="card-location">静岡県御殿場</p>
+            <h3 class="card-title">328DAY御殿場ツーリング</h3>
+            <p class="card-desc">328DAYを記念した御殿場ツーリング。富士山麓で愛車328への想いを新たにした。</p>
+            <a class="card-link" href="archive/2019.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">01</div>
+            <p class="card-date">2019年1月20日</p>
+            <p class="card-location">横須賀美術館</p>
+            <h3 class="card-title">横須賀ツーリング</h3>
+            <p class="card-desc">横須賀美術館を目的地にした新年ツーリング。三浦半島の海と芸術を楽しんだ。</p>
+            <a class="card-link" href="archive/2019.html" target="_blank">レポートを読む</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 2018 -->
+    <div class="year-section">
+      <div class="year-group">
+        <div class="year-label">2018</div>
+        <div class="card-grid">
+
+          <div class="card">
+            <div class="card-number">05</div>
+            <p class="card-date">2018年12月2日</p>
+            <p class="card-location">年末イベント</p>
+            <h3 class="card-title">総会・クリスマスパーティー</h3>
+            <p class="card-desc">年末の総会とクリスマスパーティー。メンバーとの交流で1年を締めくくった。</p>
+            <a class="card-link" href="archive/2018.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">04</div>
+            <p class="card-date">2018年11月18日</p>
+            <p class="card-location">群馬県</p>
+            <h3 class="card-title">群馬ツーリング</h3>
+            <p class="card-desc">イタリアンレストランPAPPAREを目的地に秋の群馬へ。本格イタリア料理とドライブを楽しんだ。</p>
+            <a class="card-link" href="report/2018-gunma.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">03</div>
+            <p class="card-date">2018年10月28日</p>
+            <p class="card-location">逗子</p>
+            <h3 class="card-title">逗子ツーリング</h3>
+            <p class="card-desc">湘南OVAを目的地にした逗子ツーリング。秋の湘南の海と328の組み合わせを満喫した。</p>
+            <a class="card-link" href="report/2018-zushi.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">02</div>
+            <p class="card-date">2018年9月2日</p>
+            <p class="card-location">箱根</p>
+            <h3 class="card-title">箱根有志ツーリング</h3>
+            <p class="card-desc">有志メンバーによる箱根ツーリング。山岳路を気の合う仲間たちとともに走り抜けた。</p>
+            <a class="card-link" href="report/2018-hakone.html" target="_blank">レポートを読む</a>
+          </div>
+
+          <div class="card">
+            <div class="card-number">01</div>
+            <p class="card-date">2018年5月20日</p>
+            <p class="card-location">栃木県那須高原</p>
+            <h3 class="card-title">那須高原ツーリング</h3>
+            <p class="card-desc">フィオラノを目的地に那須高原へ。初夏の那須の高原を328で走り抜けた爽快なツーリング。</p>
+            <a class="card-link" href="report/2018-nasu.html" target="_blank">レポートを読む</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <div class="footer-logo-emblem">F</div>
+          <div>
+            <div class="footer-logo-main">F328 Club</div>
+            <div class="footer-logo-sub">of Japan</div>
+          </div>
+        </div>
+        <p class="footer-desc">フェラーリ328オーナーによる、オーナーのためのクラブ。2014年設立。全国各地でツーリングや交流イベントを開催しています。</p>
+      </div>
+      <div>
+        
+        <ul class="footer-nav-links">
+          <li><a href="../index.html">ホーム</a></li>
+          <li><a href="touring.html">ツーリングレポート</a></li>
+          <li><a href="../gallery/gallery.html">フォトギャラリー</a></li>
+          <li><a href="../movie/movie.html">ムービー</a></li>
+          <li><a href="../restore/restore.html">レストア</a></li>
+        </ul>
+      </div>
+      <div>
+        
+        <ul class="footer-nav-links">
+          <li><a href="../index.html#membership">入会について</a></li>
+          <li><a href="../index.html#contact">お問合せ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2014–2026 <span>F328 Club of Japan</span>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ── JAVASCRIPT ── -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
