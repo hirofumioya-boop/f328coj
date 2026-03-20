@@ -364,17 +364,8 @@ section { padding: 80px 5%; }
 
 .album-thumb {
   aspect-ratio: 4/3; background: var(--gray);
-  position: relative; overflow: hidden; cursor: pointer;
+  position: relative; overflow: hidden;
 }
-
-.album-thumb::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: rgba(204,0,0,0.5);
-  opacity: 0; transition: opacity 0.3s;
-}
-
-.album-thumb:hover::after { opacity: 1; }
 
 /* ── VIDEO GRID ── */
 .video-grid {
