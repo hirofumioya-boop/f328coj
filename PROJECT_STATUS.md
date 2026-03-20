@@ -73,9 +73,6 @@ ferrari-redesign/
 ### gallery/gallery.html（フォトギャラリー）
 - ツーリング写真アルバム一覧
 
-### restore/restore.html（レストア）
-- エンジン・ボディ・インテリアの写真グリッド
-
 ---
 
 ## デザイン仕様
@@ -129,7 +126,7 @@ ferrari-redesign/
 
 **index.htmlには独自のインラインCSS（`<style>`タグ内）があるため、style.cssを変更しただけではindex.htmlに反映されない。**
 
-スタイルを変更する際は必ず以下の3ファイルをセットで確認・修正すること：
+スタイルを変更する際は必ず以下の4ファイルをセットで確認・修正すること：
 
 1. `style.css`
 2. `index.html`（インラインCSS）
@@ -137,6 +134,34 @@ ferrari-redesign/
 4. `gallery/gallery.html`（インラインCSS）
 
 修正後は必ず全ファイルで変更が反映されているか確認してからpushする。
+
+---
+
+## ⚠️ モバイルメニュー（ハンバーガー）の重要ルール
+
+モバイルメニューはPC版ナビと**完全に同じ項目・同じ順番**でなければならない。
+
+**現在の正しい順番（index.html）:**
+```html
+<a href="#" onclick="toggleMenu()">ホーム</a>
+<a href="#about" onclick="toggleMenu()">当クラブについて</a>
+<a href="news/news.html" onclick="toggleMenu()">更新情報</a>
+<a href="#events" onclick="toggleMenu()">ツーリングレポート</a>
+<a href="#gallery" onclick="toggleMenu()">フォトギャラリー</a>
+<a href="#movie" onclick="toggleMenu()">ムービー</a>
+<a href="index.html#links" onclick="toggleMenu()">リンク</a>
+<a href="#membership" onclick="toggleMenu()">入会について</a>
+<a href="#contact" onclick="toggleMenu()">お問合せ</a>
+```
+
+**過去の失敗例と原因:**
+- 「About」という英語表記が残っていた（コピペ元が古いバージョン）
+- 「ホーム」「当クラブについて」「更新情報」が抜けていた
+- 「ホーム」と「お問合せ」が画面外に切れて見えなかった
+  → 原因: 9項目が縦に並ぶと画面高さを超えるのに `justify-content: center` のせいで上下がはみ出していた
+  → 修正: `justify-content: flex-start` + `overflow-y: auto` + `padding: 32px 0`
+
+ナビを変更するときは必ずPC版・モバイル版の両方を同時に修正すること。
 
 ---
 
@@ -163,6 +188,7 @@ ferrari-redesign/
 - [ ] ムービーセクションのYouTube（localhostでは表示されないがVercel上では正常）
 - [ ] フォトギャラリーのホバーエフェクト削除（ライトボックス未実装のため）
 - [ ] 2025〜2026レポートページの写真追加（写真入手次第）
+- [ ] リンクセクションのSNS・関連サイトURL追加（URL確定次第）
 
 ---
 
@@ -178,6 +204,40 @@ ferrari-redesign/
 - f328coj.jpへの外部リンク: 全削除済み
 - 統計バッジ（2014設立年/328/10+イベント/¥6K年会費）: 削除済み
 - 赤丸Fロゴ: 削除済み（「F328 CLUB OF JAPAN」テキストに置き換え）
+
+---
+
+## 過去に踏んだ地雷・トラブル事例集
+
+### 1. style.cssを直してもトップページに反映されない
+- **原因**: index.htmlに独自のインラインCSS（`<style>`タグ）があり、外部CSSより優先される
+- **教訓**: style.cssとindex.htmlのインラインCSSは必ず両方修正する
+
+### 2. モバイルメニューの項目が上下で切れて見えない
+- **原因**: 項目が9個に増えて画面高さを超えたが `justify-content: center` で中央揃えのため上下がはみ出す。スクロールも不可
+- **修正**: `justify-content: flex-start` + `overflow-y: auto` + `padding: 32px 0`
+- **教訓**: メニュー項目が増えたら画面に収まるか必ずスマホで確認する
+
+### 3. モバイルメニューとPC版ナビの内容が不一致
+- **原因**: ナビに項目を追加するとき、PC版（`<ul class="nav-links">`）だけ更新してモバイル版（`<div class="mobile-menu">`）を更新し忘れた
+- **教訓**: ナビ変更は必ずPC版・モバイル版の両方を同時に修正する
+
+### 4. 「更新情報」がナビに2回表示された
+- **原因**: ナビ項目追加時のコピペミスで同じ行が重複した
+- **教訓**: ナビ修正後は必ずHTML上で重複がないか確認する
+
+### 5. サブページのpage-hero-tagの文字が細くて小さい
+- **原因**: style.cssの `.page-hero-tag` が `font-size: 10px`・font-weight未設定のまま
+- **修正**: `font-size: 12px; font-weight: 700;` に変更
+- **教訓**: トップページの `.section-tag` とサブページの `.page-hero-tag` は同じ見た目にする
+
+### 6. Pythonスクリプトのバックスラッシュエスケープエラー
+- **原因**: コマンドライン上でPythonをインラインで実行する際のエスケープ問題
+- **修正**: `.py` ファイルに書き出してから実行する
+
+### 7. フッター上部のスペースが広い
+- **原因**: index.htmlのインラインCSSに `footer { padding: 64px 5% 32px; }` が残存していた
+- **修正**: `padding: 20px 5% 20px;` に変更（style.cssと同じ値）
 
 ---
 
