@@ -1141,3 +1141,51 @@ footer {
   .hero-subtitle { letter-spacing: 4px; }
   .fee-number { font-size: 56px; }
 }
+
+/* ── NEWS ITEMS (shared by index.html and news/news.html) ── */
+.news-item {
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 28px 0;
+}
+.news-item:last-child { border-bottom: none; }
+
+.news-date {
+  font-size: 10px; letter-spacing: 2px;
+  color: var(--text-muted); text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.news-tag {
+  display: inline-block;
+  font-size: 9px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase;
+  background: var(--red); color: var(--white);
+  padding: 3px 8px; margin-bottom: 10px;
+}
+
+.news-title {
+  font-size: 16px; font-weight: 700;
+  color: var(--white); margin-bottom: 8px; line-height: 1.5;
+}
+
+.news-body {
+  font-size: 13px; color: var(--text-muted); line-height: 1.8;
+}
+
+.news-link {
+  display: inline-block; margin-top: 10px;
+  font-size: 11px; font-weight: 700; letter-spacing: 1px;
+  color: var(--red); text-decoration: none; text-transform: uppercase;
+}
+.news-link:hover { opacity: 0.7; }
+
+.news-empty { font-size: 13px; color: var(--text-muted); }
+
+/* ── NEWS PREVIEW (top page section) ── */
+.news-preview-list {
+  max-width: 860px; margin: 0 auto;
+}
+
+.news-more {
+  text-align: center; margin-top: 40px;
+}

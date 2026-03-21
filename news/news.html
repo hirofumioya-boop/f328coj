@@ -26,54 +26,7 @@
       max-width: 860px;
       margin: 0 auto;
     }
-    .news-item {
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      padding: 28px 0;
-    }
-    .news-item:last-child {
-      border-bottom: none;
-    }
-    .news-date {
-      font-size: 10px;
-      letter-spacing: 2px;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-    .news-tag {
-      display: inline-block;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      background: var(--red);
-      color: var(--white);
-      padding: 3px 8px;
-      margin-bottom: 10px;
-    }
-    .news-title {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 8px;
-      line-height: 1.5;
-    }
-    .news-body {
-      font-size: 13px;
-      color: var(--text-muted);
-      line-height: 1.8;
-    }
-    .news-link {
-      display: inline-block;
-      margin-top: 10px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: var(--red);
-      text-decoration: none;
-      text-transform: uppercase;
-    }
-    .news-link:hover { opacity: 0.7; }
+    /* news-item styles are in style.css (shared) */
   </style>
 </head>
 <body>
@@ -126,35 +79,9 @@
 
   <!-- ── MAIN CONTENT ── -->
   <main>
-    <div class="news-main">
-
-      <!-- ─────────────────────────────────────────
-           記事の追加方法：
-           下の <div class="news-item"> ブロックをコピーして
-           日付・タグ・タイトル・本文・リンクを書き換えてください。
-           リンクが不要な場合は <a class="news-link"> の行を削除してください。
-           タグの種類例: ツーリング / フォトギャラリー / ムービー / 入会 / サイト
-      ───────────────────────────────────────── -->
-
-      <div class="news-item">
-        <p class="news-date">2026年3月</p>
-        <span class="news-tag">サイト</span>
-        <h2 class="news-title">ウェブサイトをリニューアルしました</h2>
-        <p class="news-body">F328 Club of Japanの公式ウェブサイトをリニューアルしました。ツーリングレポート、フォトギャラリー、ムービーなどのコンテンツを一新しています。</p>
-        <a class="news-link" href="../touring/touring.html">ツーリングレポートを見る →</a>
-      </div>
-
-      <!-- 記事追加例（コピーして使ってください）
-      <div class="news-item">
-        <p class="news-date">2026年○月</p>
-        <span class="news-tag">ツーリング</span>
-        <h2 class="news-title">〇〇ツーリングレポートを追加しました</h2>
-        <p class="news-body">〇〇ツーリングのレポートを公開しました。</p>
-        <a class="news-link" href="../touring/report/2026-xxxx.html">レポートを読む →</a>
-      </div>
-      -->
-
-    </div>
+    <!-- 記事データは /news-data.js で管理しています。
+         新しい記事を追加するときは news-data.js の NEWS_ITEMS 配列の先頭に追加してください。 -->
+    <div class="news-main" id="news-list-all"></div>
   </main>
 
   <!-- ── FOOTER ── -->
@@ -165,7 +92,10 @@
     </div>
   </footer>
 
+  <script src="../news-data.js"></script>
   <script>
+    renderNews('news-list-all');
+
     function toggleMenu() {
       const menu = document.getElementById('mobileMenu');
       menu.classList.toggle('open');

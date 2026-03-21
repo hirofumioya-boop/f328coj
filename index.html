@@ -18,7 +18,7 @@
     <ul class="nav-links">
       <li><a href="#">ホーム</a></li>
       <li><a href="#about">当クラブについて</a></li>
-      <li><a href="news/news.html">更新情報</a></li>
+      <li><a href="#news">更新情報</a></li>
       <li><a href="#events">ツーリングレポート</a></li>
       <li><a href="#gallery">フォトギャラリー</a></li>
       <li><a href="#movie">ムービー</a></li>
@@ -35,7 +35,7 @@
   <div class="mobile-menu" id="mobileMenu">
     <a href="#" onclick="toggleMenu()">ホーム</a>
     <a href="#about" onclick="toggleMenu()">当クラブについて</a>
-    <a href="news/news.html" onclick="toggleMenu()">更新情報</a>
+    <a href="#news" onclick="toggleMenu()">更新情報</a>
     <a href="#events" onclick="toggleMenu()">ツーリングレポート</a>
     <a href="#gallery" onclick="toggleMenu()">フォトギャラリー</a>
     <a href="#movie" onclick="toggleMenu()">ムービー</a>
@@ -108,6 +108,19 @@
         </div>
         <a href="#membership" class="btn-primary">入会について</a>
       </div>
+    </div>
+  </section>
+
+  <!-- NEWS PREVIEW -->
+  <section id="news">
+    <div class="section-header">
+      <p class="section-tag">News & Updates</p>
+      <h2 class="section-title">更新情報</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="news-preview-list" id="news-list-home"></div>
+    <div class="news-more">
+      <a href="news/news.html" class="btn-outline">すべての更新情報を見る</a>
     </div>
   </section>
 
@@ -370,7 +383,10 @@
     </div>
   </footer>
 
+  <script src="news-data.js"></script>
   <script>
+    renderNews('news-list-home', 5);
+
     function toggleMenu() {
       const menu = document.getElementById('mobileMenu');
       menu.classList.toggle('open');
