@@ -249,7 +249,7 @@ section { padding: 100px 5%; }
 .card-number {
   font-family: 'Playfair Display', serif;
   font-size: 56px; font-weight: 700;
-  color: rgba(204,0,0,0.30);
+  color: rgba(204,0,0,0.45);
   position: absolute; top: 12px; right: 20px; line-height: 1;
 }
 
@@ -867,7 +867,7 @@ footer {
   font-family: 'Playfair Display', serif;
   font-size: 64px;
   font-weight: 700;
-  color: rgba(204,0,0,0.08);
+  color: rgba(204,0,0,0.45);
   position: absolute;
   top: 16px; right: 24px;
   line-height: 1;
