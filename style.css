@@ -249,7 +249,7 @@ section { padding: 100px 5%; }
 .card-number {
   font-family: 'Playfair Display', serif;
   font-size: 56px; font-weight: 700;
-  color: rgba(204,0,0,0.07);
+  color: rgba(204,0,0,0.30);
   position: absolute; top: 12px; right: 20px; line-height: 1;
 }
 
