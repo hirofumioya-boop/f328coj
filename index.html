@@ -353,7 +353,10 @@
         <h2 class="section-title">お問い合わせ</h2>
         <div class="section-divider"></div>
       </div>
-      <form class="contact-form" action="#" method="post" onsubmit="return false;">
+      <form class="contact-form" action="https://api.web3forms.com/submit" method="post" id="contact-form">
+        <input type="hidden" name="access_key" value="4a527da4-05ef-44ff-9161-86f805d81879" />
+        <input type="hidden" name="subject" value="F328 Club of Japan - お問合せ" />
+        <input type="hidden" name="from_name" value="F328 Club of Japan サイト" />
         <div class="form-row">
           <div class="form-group">
             <label for="name">お名前 *</label>
@@ -373,7 +376,33 @@
             送信する
           </button>
         </div>
+        <div id="form-result" style="margin-top:16px; font-size:14px; text-align:center;"></div>
       </form>
+      <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+          e.preventDefault();
+          var form = this;
+          var resultDiv = document.getElementById('form-result');
+          resultDiv.style.color = '#888';
+          resultDiv.textContent = '送信中...';
+          fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form)
+          }).then(function(res) { return res.json(); }).then(function(data) {
+            if (data.success) {
+              resultDiv.style.color = '#cc0000';
+              resultDiv.textContent = 'お問い合わせを受け付けました。ありがとうございます。';
+              form.reset();
+            } else {
+              resultDiv.style.color = '#888';
+              resultDiv.textContent = '送信に失敗しました。時間をおいて再度お試しください。';
+            }
+          }).catch(function() {
+            resultDiv.style.color = '#888';
+            resultDiv.textContent = '送信に失敗しました。時間をおいて再度お試しください。';
+          });
+        });
+      </script>
     </div>
   </section>
 
