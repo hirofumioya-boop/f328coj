@@ -1148,3 +1148,57 @@ footer {
 .news-more {
   text-align: center; margin-top: 40px;
 }
+
+/* ── SCHEDULE SECTION ── */
+.schedule-intro {
+  max-width: 700px; margin: 0 auto 36px;
+  text-align: center; font-size: 14px;
+  color: var(--text-muted); line-height: 1.9;
+}
+
+.schedule-buttons {
+  display: flex; gap: 16px;
+  justify-content: center; flex-wrap: wrap;
+  margin-bottom: 56px;
+}
+
+.schedule-table {
+  max-width: 600px; margin: 0 auto;
+}
+
+.schedule-year-title {
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 3px; color: var(--red);
+  text-transform: uppercase; text-align: center;
+  margin-bottom: 24px;
+}
+
+.schedule-list {
+  display: flex; flex-direction: column; gap: 0;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.schedule-item {
+  display: flex; align-items: center;
+  padding: 16px 28px; gap: 32px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: background 0.2s;
+}
+.schedule-item:last-child { border-bottom: none; }
+.schedule-item:hover { background: rgba(255,255,255,0.03); }
+
+.schedule-date {
+  font-size: 13px; font-weight: 700;
+  color: var(--red); min-width: 80px;
+  letter-spacing: 1px;
+}
+
+.schedule-name {
+  font-size: 14px; color: var(--white);
+}
+
+@media (max-width: 600px) {
+  .schedule-item { padding: 14px 20px; gap: 20px; }
+  .schedule-date { min-width: 64px; font-size: 12px; }
+  .schedule-name { font-size: 13px; }
+}
