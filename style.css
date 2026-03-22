@@ -149,7 +149,7 @@ nav {
   background-size: 60px 60px;
 }
 
-.page-hero-inner { position: relative; z-index: 1; max-width: 900px; }
+.page-hero-inner { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; text-align: center; }
 
 .page-hero-tag {
   font-size: 12px; font-weight: 700; letter-spacing: 5px;
