@@ -1009,8 +1009,8 @@ footer {
 
 .membership-info {}
 
-.membership-info .section-tag { text-align: left; }
-.membership-info .section-title { text-align: left; }
+.membership-info .section-tag { text-align: center; }
+.membership-info .section-title { text-align: center; }
 .membership-info .section-divider { margin: 0 auto 28px; }
 
 .membership-text {
