@@ -782,6 +782,7 @@ footer {
 }
 
 .about-text {}
+.about-text > .btn-primary { display: block; width: fit-content; margin: 24px auto 0; }
 
 .about-eyebrow {
   font-size: 12px;
