@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- メインページ -->
+  <url>
+    <loc>https://f328coj.jp/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://f328coj.jp/news/news.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://f328coj.jp/touring/touring.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ツーリングレポート アーカイブ -->
+  <url><loc>https://f328coj.jp/touring/archive/2024.html</loc><priority>0.6</priority></url>
+  <url><loc>https://f328coj.jp/touring/archive/2023.html</loc><priority>0.6</priority></url>
+  <url><loc>https://f328coj.jp/touring/archive/2022.html</loc><priority>0.6</priority></url>
+  <url><loc>https://f328coj.jp/touring/archive/2021.html</loc><priority>0.6</priority></url>
+  <url><loc>https://f328coj.jp/touring/archive/2020.html</loc><priority>0.6</priority></url>
+  <url><loc>https://f328coj.jp/touring/archive/2019.html</loc><priority>0.6</priority></url>
+  <url><loc>https://f328coj.jp/touring/archive/2018.html</loc><priority>0.6</priority></url>
+
+  <!-- ツーリングレポート 個別 -->
+  <url><loc>https://f328coj.jp/touring/report/2026-sotobou.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2025-miura.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2025-maihama.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2025-karuizawa.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2025-gunma.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2025-gotemba.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2025-odawara.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2025-328day.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2024-yokosuka.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2024-yamanakako.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2024-miura.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2024-maihama.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2024-kujukuri.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2024-karuizawa.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2024-328day.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2023-yamanashi.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2023-wangan.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2023-miura.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2023-chiba.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2023-karuizawa.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2023-abarth.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2023-328day.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2022-maebashi.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2022-karuizawa.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2022-kanagawa.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2022-hakone.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2022-daijo.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2022-328day.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2021-saitama.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2021-hakone.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2021-328day.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2020-yamanakako.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2020-oiso.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2020-odawara.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2020-odaiba.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2019-yokosuka.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2019-yamanashi.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2019-scw.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2019-party.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2019-karuizawa.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2019-hakone.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2019-gunma.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2019-328day.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2018-zushi.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2018-party.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2018-nasu.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2018-hakone.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2018-gunma.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2017-ukai.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2017-kurumayama.html</loc><priority>0.7</priority></url>
+  <url><loc>https://f328coj.jp/touring/report/2017-328day.html</loc><priority>0.7</priority></url>
+
+</urlset>
