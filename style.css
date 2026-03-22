@@ -160,7 +160,7 @@ nav {
 .page-hero-title {
   font-family: 'Playfair Display', serif;
   font-size: clamp(24px, 3vw, 38px);
-  font-weight: 700; line-height: 1.1;
+  font-weight: 700; line-height: 1.2;
   margin-bottom: 16px;
 }
 
@@ -1044,8 +1044,12 @@ footer {
 }
 
 /* ── index.html専用: CONTACT ── */
+#schedule { background: var(--dark2); }
+.links-section { background: var(--dark2); }
+
 .contact {
   background: var(--dark);
+  padding-top: 60px;
   padding-bottom: 0;
 }
 

@@ -21,7 +21,7 @@
       <li><a href="#about">当クラブについて</a></li>
       <li><a href="#news">更新情報</a></li>
       <li><a href="#schedule">イベントスケジュール</a></li>
-      <li><a href="#events">ツーリングレポート</a></li>
+      <li><a href="touring/touring.html">ツーリングレポート</a></li>
       <li><a href="index.html#links">リンク</a></li>
       <li><a href="#membership">入会について</a></li>
       <li><a href="#contact">お問合せ</a></li>
@@ -37,7 +37,7 @@
     <a href="#about" onclick="toggleMenu()">当クラブについて</a>
     <a href="#news" onclick="toggleMenu()">更新情報</a>
     <a href="#schedule" onclick="toggleMenu()">イベントスケジュール</a>
-    <a href="#events" onclick="toggleMenu()">ツーリングレポート</a>
+    <a href="touring/touring.html" onclick="toggleMenu()">ツーリングレポート</a>
     <a href="index.html#links" onclick="toggleMenu()">リンク</a>
     <a href="#membership" onclick="toggleMenu()">入会について</a>
     <a href="#contact" onclick="toggleMenu()">お問合せ</a>
@@ -124,13 +124,13 @@
   </section>
 
   <!-- SCHEDULE -->
-  <section id="schedule" style="background: var(--dark2);">
+  <section id="schedule">
     <div class="section-header">
       <p class="section-tag">Event Schedule</p>
       <h2 class="section-title">イベントスケジュール</h2>
       <div class="section-divider"></div>
     </div>
-    <p class="schedule-intro" style="text-align:left;">2026年のイベントです。体験参加をご希望の方はお問合せよりご連絡ください。クラブの雰囲気を感じていただくため、2回まで体験参加いただけます。</p>
+    <p class="schedule-intro">2026年のイベントです。体験参加をご希望の方はお問合せよりご連絡ください。クラブの雰囲気を感じていただくため、2回まで体験参加いただけます。</p>
     <div class="schedule-buttons">
       <a href="#membership" class="btn-primary">入会について</a>
       <a href="#contact" class="btn-outline">お問合せ</a>
@@ -255,7 +255,7 @@
         <p class="membership-text">
           F328 Club of Japanは、クルマへの情熱と紳士的な精神を共有するすべての方を歓迎しています。オーナーに限らず、フェラーリ328という名車に魅せられた方であればどなたでもご入会いただけます。入会をご希望される方は、お問合せよりご連絡ください。
         </p>
-        <p style="font-size:14px; font-weight:700; color:var(--white); letter-spacing:2px; margin-bottom:12px;">入会要件</p>
+        <p style="font-size:14px; font-weight:700; color:var(--red); letter-spacing:2px; margin-bottom:12px;">入会要件</p>
         <ul class="membership-list">
           <li><span class="check">✓</span><span>20歳以上の方</span></li>
           <li><span class="check">✓</span><span>既存会員2名からの推薦があること</span></li>
@@ -274,7 +274,7 @@
 
 
   <!-- LINKS -->
-  <section class="links-section" id="links" style="background: var(--dark2);">
+  <section class="links-section" id="links">
     <div class="section-header">
       <p class="section-tag">Links</p>
       <h2 class="section-title">リンク</h2>
@@ -301,7 +301,7 @@
   </section>
 
   <!-- CONTACT -->
-  <section class="contact" id="contact" style="padding-bottom:0; padding-top:60px;">
+  <section class="contact" id="contact">
     <div class="contact-inner">
       <div class="section-header">
         <p class="section-tag">Contact</p>
@@ -327,7 +327,7 @@
           <textarea id="comment" name="comment" placeholder="入会について、イベントについてなど、お気軽にお問い合わせください。" required></textarea>
         </div>
         <div class="form-submit">
-          <button type="submit" class="btn-primary" style="border:none; cursor:pointer; font-family:'Montserrat',sans-serif;">
+          <button type="submit" class="btn-primary">
             送信する
           </button>
         </div>
