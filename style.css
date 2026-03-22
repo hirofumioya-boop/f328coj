@@ -171,7 +171,7 @@ nav {
 
 .page-hero-line {
   width: 60px; height: 2px;
-  background: var(--red); margin-top: 24px;
+  background: var(--red); margin: 24px auto 0;
 }
 
 /* ── SECTION COMMON ── */
