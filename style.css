@@ -519,14 +519,24 @@ footer {
   overflow: hidden;
 }
 
-.hero-bg {
+.hero-slideshow {
   position: absolute;
   inset: 0;
-  background-image: url('hero.jpg');
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
   background-color: #1a0000;
   background-size: cover;
   background-position: center 40%;
   background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.hero-slide.active {
+  opacity: 1;
 }
 
 .hero-car {

@@ -23,7 +23,7 @@
       <li><a href="#about">当クラブについて</a></li>
       <li><a href="#news">更新情報</a></li>
       <li><a href="#schedule">イベントスケジュール</a></li>
-      <li><a href="#events">ツーリングレポート</a></li>
+      <li><a href="touring/touring.html">ツーリングレポート</a></li>
       <li><a href="#membership">入会について</a></li>
       <li><a href="#contact">お問合せ</a></li>
     </ul>
@@ -38,14 +38,22 @@
     <a href="#about" onclick="toggleMenu()">当クラブについて</a>
     <a href="#news" onclick="toggleMenu()">更新情報</a>
     <a href="#schedule" onclick="toggleMenu()">イベントスケジュール</a>
-    <a href="#events" onclick="toggleMenu()">ツーリングレポート</a>
+    <a href="touring/touring.html" onclick="toggleMenu()">ツーリングレポート</a>
     <a href="#membership" onclick="toggleMenu()">入会について</a>
     <a href="#contact" onclick="toggleMenu()">お問合せ</a>
   </div>
 
   <!-- HERO -->
   <section class="hero" id="home">
-    <div class="hero-bg"></div>
+    <div class="hero-slideshow">
+      <div class="hero-slide active" style="background-image: url('images/hero.jpg')"></div>
+      <div class="hero-slide" style="background-image: url('images/hero2.jpg')"></div>
+      <div class="hero-slide" style="background-image: url('images/hero3.jpg')"></div>
+      <div class="hero-slide" style="background-image: url('images/hero4.jpg')"></div>
+      <div class="hero-slide" style="background-image: url('images/hero5.jpg')"></div>
+      <div class="hero-slide" style="background-image: url('images/hero6.jpg')"></div>
+      <div class="hero-slide" style="background-image: url('images/hero7.jpg')"></div>
+    </div>
     <div class="hero-grid"></div>
     <div class="hero-line"></div>
     <div class="hero-car"></div>
@@ -339,6 +347,17 @@
         nav.style.background = 'rgba(10,10,10,0.92)';
       }
     });
+
+    // Hero Slideshow
+    (function() {
+      const slides = document.querySelectorAll('.hero-slide');
+      let current = 0;
+      setInterval(function() {
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+      }, 3000);
+    })();
   </script>
 </body>
 </html>
