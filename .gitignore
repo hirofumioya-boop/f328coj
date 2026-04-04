@@ -1,1 +1,8 @@
 _backup_deleted_content/
+
+# 内部ドキュメント・開発スクリプト（GitHubに公開しない）
+*.py
+*.docx
+*.pdf
+手順書_*.md
+PROJECT_STATUS.md
