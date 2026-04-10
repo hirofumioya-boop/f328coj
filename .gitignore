@@ -6,3 +6,11 @@ _backup_deleted_content/
 *.pdf
 手順書_*.md
 PROJECT_STATUS.md
+
+# シークレット・認証情報
+.env
+.env.*
+*.pem
+*.key
+secrets.json
+credentials.json
