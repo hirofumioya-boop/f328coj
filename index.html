@@ -73,6 +73,7 @@
         <a href="#membership" class="btn-outline">入会について</a>
       </div>
     </div>
+    <div class="hero-dots" id="heroDots"></div>
     <div class="hero-scroll">
       <div class="scroll-line"></div>
       <span>Scroll</span>
@@ -357,15 +358,55 @@
       }
     });
 
-    // Hero Slideshow
+    // Hero Slideshow + Dots (A) + Ken Burns reset (D)
     (function() {
       const slides = document.querySelectorAll('.hero-slide');
+      const dotsWrap = document.getElementById('heroDots');
       let current = 0;
-      setInterval(function() {
+
+      slides.forEach(function(_, i) {
+        const dot = document.createElement('div');
+        dot.className = 'hero-dot' + (i === 0 ? ' active' : '');
+        dot.addEventListener('click', function() { goTo(i); });
+        dotsWrap.appendChild(dot);
+      });
+
+      function goTo(next) {
         slides[current].classList.remove('active');
-        current = (current + 1) % slides.length;
+        dotsWrap.children[current].classList.remove('active');
+        current = next;
+        // Ken Burns: force reflow so animation restarts
+        void slides[current].offsetWidth;
         slides[current].classList.add('active');
-      }, 5000);
+        dotsWrap.children[current].classList.add('active');
+      }
+
+      setInterval(function() { goTo((current + 1) % slides.length); }, 5000);
+    })();
+
+    // Scroll fade-in (B)
+    (function() {
+      const targets = document.querySelectorAll(
+        '.section-header, .event-card, .about-visual, .about-text, ' +
+        '.news-item, .schedule-table, .membership-info, .contact-inner'
+      );
+      targets.forEach(function(el) { el.classList.add('fade-up'); });
+
+      // Stagger event cards (E)
+      document.querySelectorAll('.event-card').forEach(function(el, i) {
+        el.style.transitionDelay = (i * 0.08) + 's';
+      });
+
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      targets.forEach(function(el) { observer.observe(el); });
     })();
   </script>
 </body>

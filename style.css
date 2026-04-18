@@ -535,8 +535,14 @@ footer {
   transition: opacity 1.2s ease-in-out;
 }
 
+@keyframes kenBurns {
+  from { transform: scale(1); }
+  to   { transform: scale(1.07); }
+}
+
 .hero-slide.active {
   opacity: 1;
+  animation: kenBurns 6s ease-out forwards;
 }
 
 .hero-car {
@@ -583,11 +589,12 @@ footer {
   position: relative;
   z-index: 2;
   text-align: center;
-  padding: 48px 56px;
+  padding: 48px 56px 48px 58px;
   max-width: 700px;
-  background: rgba(0,0,0,0.55);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  background: rgba(0,0,0,0.45);
+  border-left: 3px solid var(--red);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
 .hero-eyebrow {
@@ -598,6 +605,7 @@ footer {
   text-transform: uppercase;
   margin-bottom: 24px;
   opacity: 0.9;
+  text-shadow: 0 1px 16px rgba(0,0,0,0.9);
 }
 
 .hero-title {
@@ -606,6 +614,7 @@ footer {
   font-weight: 700;
   line-height: 1.05;
   margin-bottom: 8px;
+  text-shadow: 0 2px 24px rgba(0,0,0,0.8), 0 4px 48px rgba(0,0,0,0.6);
 }
 
 .hero-title .accent { color: var(--red); }
@@ -617,6 +626,7 @@ footer {
   color: rgba(255,255,255,0.7);
   text-transform: uppercase;
   margin-bottom: 48px;
+  text-shadow: 0 1px 16px rgba(0,0,0,0.9);
 }
 
 .hero-badges {
@@ -634,6 +644,7 @@ footer {
   text-transform: uppercase;
   color: rgba(201,168,76,0.85);
   font-weight: 700;
+  text-shadow: 0 1px 12px rgba(0,0,0,0.9);
 }
 
 .badge + .badge::before {
@@ -674,6 +685,52 @@ footer {
 @keyframes scrollPulse {
   0%, 100% { opacity: 0.4; transform: scaleY(1); }
   50% { opacity: 1; transform: scaleY(1.2); }
+}
+
+/* ── HERO DOTS (A) ── */
+.hero-dots {
+  position: absolute;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 3;
+}
+
+.hero-dot {
+  width: 24px;
+  height: 2px;
+  background: rgba(255,255,255,0.3);
+  cursor: pointer;
+  transition: background 0.4s, width 0.4s;
+}
+
+.hero-dot.active {
+  background: var(--red);
+  width: 40px;
+}
+
+/* ── SCROLL FADE-IN (B) ── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── EVENT NUMBER HOVER (E) ── */
+.event-number {
+  transition: color 0.35s, transform 0.35s;
+}
+
+.event-card:hover .event-number {
+  color: rgba(204,0,0,0.72);
+  transform: scale(1.08) translateY(-2px);
 }
 
 /* ── index.html専用: STATS BAR ── */
