@@ -1135,26 +1135,35 @@ footer {
 
   /* Hero mobile fixes */
   .hero-content {
-    padding: 28px 20px 28px 24px;
-    width: calc(100% - 32px);
+    padding: 22px 16px 22px 20px;
+    width: calc(100% - 24px);
     max-width: 100%;
   }
+  .hero-eyebrow { margin-bottom: 10px; }
+  .hero-title   { margin-bottom: 4px; }
+  .hero-subtitle {
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+  }
+  .hero-badges  { margin-bottom: 20px; }
   .badge {
     font-size: 11px;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
   }
   .hero-cta {
-    gap: 10px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
   }
   .hero-cta .btn-primary,
   .hero-cta .btn-outline {
-    padding: 12px 20px;
-    font-size: 10px;
+    padding: 13px 16px;
+    font-size: 11px;
     letter-spacing: 2px;
+    text-align: center;
+    white-space: nowrap;
   }
-  .hero-dots {
-    bottom: 60px;
-  }
+  .hero-dots { bottom: 56px; }
 
   .stats-bar {
     flex-wrap: wrap;
