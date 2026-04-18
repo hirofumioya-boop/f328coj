@@ -1133,6 +1133,29 @@ footer {
   .nav-links { display: none; }
   .hamburger { display: flex; }
 
+  /* Hero mobile fixes */
+  .hero-content {
+    padding: 28px 20px 28px 24px;
+    width: calc(100% - 32px);
+    max-width: 100%;
+  }
+  .badge {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+  .hero-cta {
+    gap: 10px;
+  }
+  .hero-cta .btn-primary,
+  .hero-cta .btn-outline {
+    padding: 12px 20px;
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+  .hero-dots {
+    bottom: 60px;
+  }
+
   .stats-bar {
     flex-wrap: wrap;
     gap: 32px;
