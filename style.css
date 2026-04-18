@@ -527,7 +527,7 @@ footer {
 .hero-slide {
   position: absolute;
   inset: 0;
-  background-color: #1a0000;
+  background-color: #0a0a0a;
   background-size: cover;
   background-position: center 40%;
   background-repeat: no-repeat;
