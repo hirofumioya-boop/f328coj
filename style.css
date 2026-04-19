@@ -1202,6 +1202,14 @@ footer {
   .fee-number { font-size: 56px; }
 }
 
+/* ── スマホ横向き: ヒーロー最低高さ確保 ── */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    height: auto;
+    min-height: 560px;
+  }
+}
+
 /* ── NEWS ITEMS (shared by index.html and news/news.html) ── */
 .news-item {
   border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -1302,4 +1310,12 @@ footer {
   .schedule-item { padding: 14px 20px; gap: 20px; }
   .schedule-date { min-width: 64px; font-size: 12px; }
   .schedule-name { font-size: 13px; }
+}
+
+/* ── スマホ横向き: ヒーロー最低高さ確保 ── */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    height: auto;
+    min-height: 560px;
+  }
 }
