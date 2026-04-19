@@ -1210,6 +1210,12 @@ footer {
   }
 }
 
+/* ── iPhone ノッチ/Dynamic Island セーフエリア対応 ── */
+nav {
+  padding-left: max(5%, env(safe-area-inset-left));
+  padding-right: max(5%, env(safe-area-inset-right));
+}
+
 /* ── NEWS ITEMS (shared by index.html and news/news.html) ── */
 .news-item {
   border-bottom: 1px solid rgba(255,255,255,0.08);
