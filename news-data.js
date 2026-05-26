@@ -13,6 +13,13 @@
 
 const NEWS_ITEMS = [
   {
+    date: "2026年5月",
+    tag: "ツーリング",
+    title: "軽井沢ツーリング 2026.05",
+    body: "毎年恒例の軽井沢ツーリング。集合場所で偶然クラシックカーラリーを見学する機会にも恵まれました。328×6台含む計10台16名で新緑の軽井沢をAu Depart - Cinq fersまで走りました。",
+    link: { url: "/touring/report/2026-karuizawa.html", text: "レポートを読む →" }
+  },
+  {
     date: "2026年4月",
     tag: "ツーリング",
     title: "大磯ツーリング 2026.04",
