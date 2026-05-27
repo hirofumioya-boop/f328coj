@@ -1,4 +1,5 @@
 _backup_deleted_content/
+staging-raw/
 
 # 内部ドキュメント・開発スクリプト（GitHubに公開しない）
 *.py
