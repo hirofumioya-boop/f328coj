@@ -15,13 +15,6 @@ const NEWS_ITEMS = [
   {
     date: "2026年5月",
     tag: "ツーリング",
-    title: "横浜ツーリング 2026.05（テスト）",
-    body: "クラシックカーラリー見学を交えたテスト追加レポートを公開しました。328×6台含む計10台16名でのツーリング記録です。",
-    link: { url: "/touring/report/2026-yokohama-test.html", text: "レポートを読む →" }
-  },
-  {
-    date: "2026年5月",
-    tag: "ツーリング",
     title: "軽井沢ツーリング 2026.05",
     body: "毎年恒例の軽井沢ツーリング。集合場所で偶然クラシックカーラリーを見学する機会にも恵まれました。328×6台含む計10台16名で新緑の軽井沢をAu Depart - Cinq fersまで走りました。",
     link: { url: "/touring/report/2026-karuizawa.html", text: "レポートを読む →" }
