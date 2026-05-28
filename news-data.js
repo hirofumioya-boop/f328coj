@@ -13,20 +13,6 @@
 
 const NEWS_ITEMS = [
   {
-    date: "2026年6月",
-    tag: "ツーリング",
-    title: "横浜港ツーリング 2026.06",
-    body: "架空レポートを公開しました。クラシックカーラリー見学後、328×6台含む計10台16名で横浜港周辺を巡るコースを走行しました。",
-    link: { url: "/touring/report/2026-yokohama2.html", text: "レポートを読む →" }
-  },
-  {
-    date: "2026年5月",
-    tag: "ツーリング",
-    title: "横浜ベイサイドツーリング 2026.05",
-    body: "架空レポートを公開しました。クラシックカーラリー見学後、328×6台含む計10台16名で横浜ベイエリアを巡るコースを走行しました。",
-    link: { url: "/touring/report/2026-yokohama.html", text: "レポートを読む →" }
-  },
-  {
     date: "2026年5月",
     tag: "ツーリング",
     title: "軽井沢ツーリング 2026.05",
@@ -132,15 +118,6 @@ const NEWS_ITEMS = [
  * @param {number|null} max - 表示件数の上限。null または省略で全件表示
  */
 function renderNews(containerId, max) {
-  function resolveNewsLink(url) {
-    if (!url) return url;
-    if (!url.startsWith("/")) return url;
-    if (window.location.protocol !== "file:") return url;
-
-    const inNewsDir = window.location.pathname.includes("/news/");
-    return `${inNewsDir ? ".." : "."}${url}`;
-  }
-
   const container = document.getElementById(containerId);
   if (!container) return;
   const items = (max != null) ? NEWS_ITEMS.slice(0, max) : NEWS_ITEMS;
@@ -154,7 +131,7 @@ function renderNews(containerId, max) {
       <span class="news-tag">${item.tag}</span>
       <h2 class="news-title">${item.title}</h2>
       <p class="news-body">${item.body}</p>
-      ${item.link ? `<a class="news-link" href="${resolveNewsLink(item.link.url)}">${item.link.text}</a>` : ''}
+      ${item.link ? `<a class="news-link" href="${item.link.url}">${item.link.text}</a>` : ''}
     </div>
   `).join('');
 }
