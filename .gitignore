@@ -6,6 +6,9 @@ staging-raw/
 *.docx
 *.pdf
 手順書_*.md
+F328COJ_*手順書*.md
+F328COJ_*仕様書*.md
+*理事向け*.md
 PROJECT_STATUS.md
 
 # シークレット・認証情報
