@@ -13,6 +13,13 @@
 
 const NEWS_ITEMS = [
   {
+    date: "2026年6月",
+    tag: "ツーリング",
+    title: "横浜テストツーリング 2026.06（公開リハーサル）",
+    body: "add-touring の公開リハーサル用に一時追加したテストレポートです。確認後にロールバック予定です。",
+    link: { url: "/touring/report/2026-yokohama-test.html", text: "レポートを読む →" }
+  },
+  {
     date: "2026年5月",
     tag: "ツーリング",
     title: "軽井沢ツーリング 2026.05",
